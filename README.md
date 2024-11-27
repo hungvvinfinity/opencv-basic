@@ -50,9 +50,10 @@ Replicate padding: chưa hiểu lắm, :)
 Reflect padding: Lặp lại ảnh theo chiều đối xứng ở các biên
 
 * ngoài ra còn có nhiều phương pháp làm mờ khác nữa
-  Box Blur: kernel dạng box (vuông hoặc chữ nhật) mỗi điểm ảnh trong khu vực kernel sẽ có ảnh hưởng như nhau
-  Median Blur: nó dùng trung vị để xác định giá trị trung tâm mới, [ví dụ](https://docs.gimp.org/en/gimp-filter-median-blur.html) ma trận 3x3 sắp xếp từ bé đến lớn, trung vị là giá trị ở giữa -> thay thế cho điểm trung tâm từ 161 -> 186
-  Bilateral Filter: Làm mờ ảnh bằng cách sử dụng hai hàm Gaussian, một cho không gian và một cho cường độ màu
+
+  - Box Blur: kernel dạng box (vuông hoặc chữ nhật) mỗi điểm ảnh trong khu vực kernel sẽ có ảnh hưởng như nhau
+  - Median Blur: nó dùng trung vị để xác định giá trị trung tâm mới, [ví dụ](https://docs.gimp.org/en/gimp-filter-median-blur.html) ma trận 3x3 sắp xếp từ bé đến lớn, trung vị là giá trị ở giữa -> thay thế cho điểm trung tâm từ 161 -> 186
+  - Bilateral Filter: Làm mờ ảnh bằng cách sử dụng hai hàm Gaussian, một cho không gian và một cho cường độ màu
   .v.v. nhiều vãi ae tự tiềm hiểu gpt ra 1 rổ
 
  **ứng dụng trong các app làm mịn da**
