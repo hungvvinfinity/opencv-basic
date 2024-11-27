@@ -1,11 +1,13 @@
 # opencv-basic
 ### Ảnh được biểu diễn như thế nào?
 dưới dạng ma trận. Mỗi phần tử trong ma trận này tương ứng với một điểm ảnh (pixel) trong ảnh
+đây là ví dụ đơn giản về biểu diễn ảnh bằng ma trận
+![img](sample-matrix.gif)
+
+Cách Biểu Diễn Ảnh
  1. Ma Trận Một Kênh (Grayscale) từ 0 đến 255, trong đó 0 là màu đen và 255 là màu trắng
  2. Ma Trận Ba Kênh (Color) [Blue, Green, Red] => [0, 0, 255] đây là màu đỏ
  3. Ma Trận Bốn Kênh (Transparency) [B, G, R, A] => đỏ 50% tranparent [0, 0, 255, 128]
-
-![img](sample-matrix.gif)
 
 ### Thao Tác Cơ Bản Với Ảnh
 #### 1. Chuyển đổi sang ảnh xám
