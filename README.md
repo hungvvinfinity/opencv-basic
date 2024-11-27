@@ -5,7 +5,7 @@ dưới dạng ma trận. Mỗi phần tử trong ma trận này tương ứng v
  2. Ma Trận Ba Kênh (Color) [Blue, Green, Red] => [0, 0, 255] đây là màu đỏ
  3. Ma Trận Bốn Kênh (Transparency) [B, G, R, A] => đỏ 50% tranparent [0, 0, 255, 128]
 
-![img](samplematrix.gif)
+![img](sample-matrix.gif)
 
 ### Thao Tác Cơ Bản Với Ảnh
 #### 1. Chuyển đổi sang ảnh xám
