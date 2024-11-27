@@ -54,7 +54,19 @@ Reflect padding: Lặp lại ảnh theo chiều đối xứng ở các biên
   Median Blur: nó dùng trung vị để xác định giá trị trung tâm mới, [ví dụ](https://docs.gimp.org/en/gimp-filter-median-blur.html) ma trận 3x3 sắp xếp từ bé đến lớn, trung vị là giá trị ở giữa -> thay thế cho điểm trung tâm từ 161 -> 186
   Bilateral Filter: Làm mờ ảnh bằng cách sử dụng hai hàm Gaussian, một cho không gian và một cho cường độ màu
   .v.v. nhiều vãi ae tự tiềm hiểu gpt ra 1 rổ
-  
+
+ **ứng dụng trong các app làm mịn da**
+ ```python
+# Gaussian Blur
+smoothed = cv2.GaussianBlur(image, (5, 5), 0)
+
+# Median Blur
+smoothed = cv2.medianBlur(image, 5)
+
+# Làm mịn da mà giữ nguyên cạnh
+bilateral_filtered = cv2.bilateralFilter(image, 9, 75, 75)
+```
+
 #### 4. Phát hiện cạnh và viền: 
 ```python
 edges = cv2.Canny(image, threshold1 = 100, threshold2 = 200)
@@ -69,3 +81,30 @@ cạnh là các điểm trong ảnh được highlight trắng trong nền đen,
 ```python
 contours, _ = cv2.findContours(edges, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
 ```
+**ứng dụng trong các app kiểu phát hiện góc tài liệu để khi chụp tự động cắt góc**
+
+#### 5. Cân bằng sáng, tương Phản, chỉnh màu, tăng cường màu
+```python
+# Điều chỉnh độ sáng và tương phản
+# alpha là hệ số tương phản, beta là giá trị tăng giảm độ sáng
+adjusted = cv2.convertScaleAbs(image, alpha=1.5, beta=50)
+
+# cân bằng kênh
+# Chuyển đổi ảnh sang không gian màu LAB
+lab_image = cv2.cvtColor(image, cv2.COLOR_BGR2Lab)
+# Tách các kênh L, A, và B
+l, a, b = cv2.split(lab_image)
+# Cân bằng kênh L
+l_equalized = cv2.equalizeHist(l)
+
+# tăng cường màu
+# Chuyển đổi ảnh sang không gian màu HSV
+hsv_image = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
+# Tăng cường màu xanh
+mask = cv2.inRange(hsv_image, (60, 100, 100), (180, 255, 255))
+hsv_image[mask > 0] = [120, 255, 255]
+```
+
+**các template, filter trong các app ảnh**
+
+
